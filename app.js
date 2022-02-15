@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({   /* created from mongoose schema   */
   passward:String,
 });
 
-// const secret ="MylittleSecret.";                 /*  mongoose-encryption - npm    Secret String Instead of Two Keys (want to write secret into long String) */
+//          /*  mongoose-encryption - npm    Secret String Instead of Two Keys (want to write secret into long String) */
 userSchema.plugin(encrypt, { secret: process.env.SECRET , encryptedFields: ["passward"]  });
  /* add encrypt package as plugin      encrypt our entire database */
 // add this plugin to the schema before create mongoose model bcoz we are passing userSchema as a parameter to create new mongoose model.
